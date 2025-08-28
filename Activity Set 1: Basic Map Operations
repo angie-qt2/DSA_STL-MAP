@@ -1,0 +1,38 @@
+#include <iostream> 
+#include <string>
+#include <map>
+
+using namespace std;
+int main () {
+    
+    //Insert 3 name-age pairs using .insert()
+    map <string, int> ageMaps;
+    ageMaps.insert ( pair<string, int> ("Alice", 10) );
+    ageMaps.insert ( pair<string, int> ("Bobby", 15) );
+    ageMaps.insert ( pair<string, int> ("Charlie", 20) );
+    //Insert 2 name-age pairs using [].
+    ageMaps["Danica"] = 25;
+    ageMaps["Ellie"] = 30;
+
+    //Prints the entire map using a range-based for loop.
+    cout << "Name and age:\n";
+    for (const auto& ages: ageMaps){
+        cout << ages.first << ": " << ages.second << "\n";
+    }
+    
+    //Access and prints the age of one specific person using their name as a key.
+    string name = "Bobby";
+    cout << "\nAge of " << name << ": " << ageMaps[name] << "\n";
+    
+    //Try accessing a non-existing key and observe what happens.
+    string nonExist = "France";
+    cout << "\nAccessing non-existing key '" << nonExist << "': " << ageMaps[nonExist] << "\n";
+    
+    //Overall list after accesing a non-existing key
+    cout << "\nMap with non-existing key:\n";
+    for (const auto& ages : ageMaps) {
+        std::cout << ages.first << ": " << ages.second << "\n";
+    }
+
+    return 0;
+}
