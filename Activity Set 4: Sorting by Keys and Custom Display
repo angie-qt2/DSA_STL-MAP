@@ -1,0 +1,33 @@
+#include <iostream>
+#include <map>       
+
+using namespace std;
+
+//function that takes a map<char, int> and displays it in a custom format
+void displayGrades(const map<char, int>& grades) {
+    for (auto &e : grades) {
+        cout << "Grade " << e.first << ": " << e.second << endl;
+    }
+}
+
+int main() {
+   
+    map<char, int> grades;
+    // 5 entries (random order)
+    grades['C'] = 75;
+    grades['A'] = 90;
+    grades['F'] = 95;
+    grades['B'] = 85;
+    grades['D'] = 70;
+
+    // Print the map and observe the key ordering
+    cout << "Map contents: " << endl;
+    for (auto &e: grades) {
+        cout << e.first << " - " << e.second << endl;
+    }
+
+    cout << "\nCustom Format:\n";
+    displayGrades(grades);
+    
+    return 0;
+}
