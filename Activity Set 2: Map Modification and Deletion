@@ -1,0 +1,56 @@
+#include <iostream> 
+#include <string>
+#include <map>
+
+using namespace std;
+int main () {
+    
+    //Insert 3 name-age pairs using .insert()
+    map <string, int> ageMaps;
+    ageMaps.insert ( pair<string, int> ("Angela", 10) );
+    ageMaps.insert ( pair<string, int> ("Blesie", 15) );
+    ageMaps.insert ( pair<string, int> ("Charize", 20) );
+    //Insert 2 name-age pairs using [].
+    ageMaps["Danica"] = 25;
+    ageMaps["Ellie"] = 30;
+    
+    //Updated Blesie's age
+    ageMaps["Blesie"] = 16;
+    
+    //Prints the entire map using a range-based for loop.
+    cout << "Map Size: " << endl;
+    for (const auto& ages: ageMaps){
+        cout << ages.first << ": " << ages.second << "\n";
+    }
+    cout << endl;
+    
+    //check if a specific name exists
+	string name;
+	cout << "Enter a Character: ";
+	cin >> name;
+	auto it = ageMaps.find(name);  
+    if (it != ageMaps.end()) {
+        cout << it->first << ": " << it->second << endl;
+    } 
+    else {
+        cout << "Name doesn't exist!" << endl;
+    }
+	cout << endl;
+	
+	//Erasing Danica
+	ageMaps.erase("Danica");
+	
+	int count = 0;
+    for (const auto &age : ageMaps) {
+        count++;
+    }
+    
+    //Print the size of the map and its contents.
+    cout << "Updated Map Size after deletion: " << count << endl;
+    cout << "Contents of the map:" << endl;
+    for (const auto &age : ageMaps) {
+        cout << age.first << ", " << age.second << endl;
+    }
+	
+    return 0;
+}
