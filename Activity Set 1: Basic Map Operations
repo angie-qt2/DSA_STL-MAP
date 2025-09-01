@@ -7,9 +7,9 @@ int main () {
     
     //Insert 3 name-age pairs using .insert()
     map <string, int> ageMaps;
-    ageMaps.insert ( pair<string, int> ("Alice", 10) );
-    ageMaps.insert ( pair<string, int> ("Bobby", 15) );
-    ageMaps.insert ( pair<string, int> ("Charlie", 20) );
+    ageMaps.insert ( pair<string, int> ("Angela", 10) );
+    ageMaps.insert ( pair<string, int> ("Blesie", 15) );
+    ageMaps.insert ( pair<string, int> ("Charize", 20) );
     //Insert 2 name-age pairs using [].
     ageMaps["Danica"] = 25;
     ageMaps["Ellie"] = 30;
