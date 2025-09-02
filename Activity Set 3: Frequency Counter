@@ -1,0 +1,27 @@
+#include <iostream>
+#include <sstream>
+#include <map>
+using namespace std;
+
+int main() {
+    //Take a string input
+    cout << "Enter a sentence: ";
+    string sentence;
+    getline(cin, sentence); 
+    //Use stringstream to split the string into words
+    stringstream sstream(sentence); 
+    
+    //count the frequency of each word.
+    map<string, int> count; 
+
+    string wordC; 
+    while (sstream >> wordC) { 
+        count[wordC]++; 
+    }
+
+    for (const auto &Wrds : count) {
+        cout << Wrds.first << " = " << Wrds.second << endl;
+    }
+
+    return 0;
+}
